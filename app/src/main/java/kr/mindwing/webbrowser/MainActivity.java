@@ -1,6 +1,7 @@
 package kr.mindwing.webbrowser;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 if (webView.canGoBack()) {
                     webView.goBack();
                 } else {
-                    Toast.makeText(MainActivity.this, "맨 뒷페이지 입니다.", Toast.LENGTH_SHORT).show();
+                    noti("맨 뒷페이지 입니다.");
                 }
             }
         });
@@ -75,8 +76,12 @@ public class MainActivity extends AppCompatActivity {
         if (webView.canGoForward()) {
             webView.goForward();
         } else {
-            Toast.makeText(MainActivity.this, "맨 앞페이지 입니다.", Toast.LENGTH_SHORT)
-                    .show();
+            noti("맨 앞페이지 입니다.");
         }
+    }
+
+    private void noti(String str) {
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        Snackbar.make(webView, str, Snackbar.LENGTH_SHORT).show();
     }
 }
