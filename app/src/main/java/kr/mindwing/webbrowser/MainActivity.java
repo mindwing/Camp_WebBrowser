@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText textUrl;
     private WebView webView;
-    private Button backButton, forwardButton;
+    private Button backButton; //, forwardButton;
     private View.OnKeyListener listener = new View.OnKeyListener() {
 
         @Override
@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        forwardButton = (Button) findViewById(R.id.forward);
+//        사용되지 않음.
+//        forwardButton = (Button) findViewById(R.id.forward);
 
         textUrl = (EditText) findViewById(R.id.text_url);
         textUrl.setOnKeyListener(listener);
